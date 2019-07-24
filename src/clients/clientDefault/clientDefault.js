@@ -43,22 +43,23 @@ class ClientDefault {
       .then(json => {
         //log extracted data from fetch w/o processing
         consoleUtils.colorPrint("blue", "white", "API extracted data:");
-        consoleUtils.tablePrint(json.entities.requests);
+        consoleUtils.tablePrint(json.entities.job);
 
         //iterate over results to create model objects and push them to array
-        json.entities.requests.map(element => {
+        json.entities.job.map(element => {
+          // console.log(element);
           let modelObject = new modelDefault(
-            element.comments,
+            element.analysis_request_id,
+            element.description,
             element.id,
-            element.firstName,
-            element.lastName
+            element.status
           );
           dataSet.push(modelObject);
         });
         //callback object
-        consoleUtils.colorPrint("purple", "white", "API extracted data:");
+        consoleUtils.colorPrint("purple", "white", "Object Array:");
         consoleUtils.tablePrint(dataSet);
-        callBack(json);
+        callBack(dataSet);
       })
   }
 }

@@ -6,6 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,13 +23,20 @@ export default function SimpleTable({data}) {
   const classes = useStyles();
 
   const tableHeaders = [
-    "Hello headers!"
+    "Analysis Request Id",
+    "Description",
+    "ID",
+    "Status"
   ];
   
   const tableBody = (
     <TableBody>
-      {data.entities.requests.map((row) => (
+      {data.map((row) => (
         <TableRow>
+          <TableCell>{row.analysis_request_id}</TableCell>
+          <TableCell><Button onClick={()=>alert(row.id)}>{row.description}</Button></TableCell>
+          <TableCell>{row.id}</TableCell>
+          <TableCell>{row.status}</TableCell>
         </TableRow>
       ))}
     </TableBody>

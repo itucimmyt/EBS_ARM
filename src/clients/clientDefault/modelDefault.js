@@ -1,10 +1,10 @@
 class modelDefault{
 
-  constructor(comments, id, firstName, lastName){
-    this.comments = comments,
+  constructor(analysis_request_id, description, id, status){
+    this.analysis_request_id = analysis_request_id,
+    this.description = description,
     this.id = id,
-    this.firstName = firstName,
-    this.lastName = lastName
+    this.status = status
   }
 }
 

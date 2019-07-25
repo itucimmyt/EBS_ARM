@@ -16,8 +16,14 @@ export default function PaperSheet({entity001}) {
   return (
     <div>
       <Paper className={classes.root}>
+<<<<<<< Updated upstream
 
           <DefaultContainer />
+=======
+        <Typography foo="bar" variant="h5" component="h3">
+          This is your Catalog001 Component
+        </Typography>
+>>>>>>> Stashed changes
       </Paper>
     </div>
   );
